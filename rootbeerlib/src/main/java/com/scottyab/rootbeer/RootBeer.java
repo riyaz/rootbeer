@@ -345,7 +345,7 @@ public class RootBeer {
         }
 
         RootBeerNative rootBeerNative = new RootBeerNative();
-        rootBeerNative.setLogDebugMessages(true);
+        rootBeerNative.setLogDebugMessages(false);
         return rootBeerNative.checkForRoot(paths) > 0;
     }
 
