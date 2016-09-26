@@ -13,7 +13,7 @@ public final class QLog {
     public static final int ERRORS_WARNINGS_INFO_DEBUG = 4;
     public static final int ALL = 5;
 
-    public static final int LOGGING_LEVEL = NONE;
+    public static int LOGGING_LEVEL = NONE;
 
     /*
      * For filtering app specific output
@@ -23,10 +23,6 @@ public final class QLog {
      * So any important logs can be outputted in non filtered output also
      */
     private static final String TAG_GENERAL_OUTPUT = "QLog";
-
-    static {
-        i("Log class reloaded");
-    }
 
     /**
      * @param obj

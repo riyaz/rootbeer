@@ -26,6 +26,8 @@ public class RootBeer {
 
     final Context mContext;
 
+    private boolean loggingEnabled = false;
+
     public RootBeer(Context context) {
         mContext = context;
     }
@@ -345,8 +347,13 @@ public class RootBeer {
         }
 
         RootBeerNative rootBeerNative = new RootBeerNative();
-        rootBeerNative.setLogDebugMessages(false);
+        rootBeerNative.setLogDebugMessages(loggingEnabled);
         return rootBeerNative.checkForRoot(paths) > 0;
+    }
+
+    public void setLoggingEnabled(boolean enabled) {
+        loggingEnabled = enabled;
+        QLog.LOGGING_LEVEL = loggingEnabled ? QLog.ALL : QLog.NONE;
     }
 
 }
